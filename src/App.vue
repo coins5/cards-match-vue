@@ -5,6 +5,7 @@ import CardItem from './components/CardItem.vue'
 import SettingsModal from './components/SettingsModal.vue'
 import ScoresList from './components/ScoresList.vue'
 import { useGame } from './composables/useGame'
+import GitHubBadge from './components/GitHubBadge.vue'
 
 // Main game API (state + actions)
 const {
@@ -28,7 +29,8 @@ const showSettings = ref(false)
         <div class="title">Cards Match</div>
         <div class="muted">Flip cards to find {{ meta.match }}-of-a-kind. 100 pts + up to 1000 bonus per match.</div>
       </div>
-      <div class="row" style="gap:8px;">
+      <div class="row" style="gap:8px; align-items:center;">
+        <GitHubBadge repo="coins5/cards-match-vue" />
         <button class="btn" @click="restart">New Game</button>
         <button class="btn" @click="showSettings = true">Settings</button>
       </div>
@@ -85,4 +87,3 @@ const showSettings = ref(false)
   </div>
   
 </template>
-
