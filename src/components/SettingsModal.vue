@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { reactive, watch, toRefs } from 'vue'
-
-type Difficulty = 'easy'|'medium'|'hard'|'dark'
-type Source = 'emoji'|'giphy'
+// Settings modal with difficulty and image source options
+import { reactive, watch } from 'vue'
+import type { Difficulty, Source } from '../composables/types'
 
 const props = defineProps<{
   open: boolean
@@ -16,6 +15,7 @@ const emit = defineEmits<{
   (e:'save', payload: { difficulty: Difficulty, source: Source, giphyApiKey?: string, giphyQuery?: string }): void
 }>()
 
+// Local, editable copy of settings before saving
 const state = reactive({
   difficulty: props.difficulty as Difficulty,
   source: props.source as Source,
@@ -87,4 +87,3 @@ function onSave(){
 
 <style scoped>
 </style>
-

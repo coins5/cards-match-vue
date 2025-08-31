@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// A single card: handles flip/matched visual state and click
 import { computed } from 'vue'
 
 const props = defineProps<{
@@ -65,4 +66,3 @@ const ariaLabel = computed(() => props.label ?? 'card')
 .card.matched .inner{ outline: 2px solid #2a5a44; box-shadow: 0 0 0 2px rgba(110,231,183,.15) inset, 0 8px 20px rgba(0,0,0,.35); }
 
 </style>
-
